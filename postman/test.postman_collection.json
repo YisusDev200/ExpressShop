@@ -1,0 +1,2174 @@
+{
+	"info": {
+		"_postman_id": "1bbb44a8-a219-45b9-b3f4-810bfd0eb3a3",
+		"name": "E-COMMERCE BACKEND",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29986311"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"firstname\": \"jesus\",\n  \"lastname\": \"alberto\",\n  \"email\": \"jpech@gmail.com\",\n  \"mobile\": \"9971080902\",\n  \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/user/register",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "all users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/user/all-users",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"all-users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"jpech@gmail.com\",\n    \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/user/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "refresh token",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/user/refresh",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/user/logout",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/user/65421e63411880496690e829",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"65421e63411880496690e829"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete one user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/user/65422200beabe9fa21d10141",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"65422200beabe9fa21d10141"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstname\": \"jesus\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/user/edit-user",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"edit-user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "block user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/user/block-user/65421e63411880496690e829",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"block-user",
+								"65421e63411880496690e829"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "unblock user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/user/unblock-user/65421e63411880496690e829",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"unblock-user",
+								"65421e63411880496690e829"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"12345678910\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/user/password",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "forgot password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"jpech@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/user/forgot-password-token",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"forgot-password-token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "reset password",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"12345678a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:4000/api/user/reset-password/be86da8729d473453a1a448cea34aa83f320faf6972c8045231ad31ceab03818",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "4000",
+							"path": [
+								"api",
+								"user",
+								"reset-password",
+								"be86da8729d473453a1a448cea34aa83f320faf6972c8045231ad31ceab03818"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"jpech@gmail.com\",\n    \"password\" :\"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/user/admin-login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"admin-login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get wishList - p",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/user/wishlist",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"wishlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"cart\": [\n    {\n      \"_id\": \"65423bcdc1846fdd73b26482\",\n      \"count\": 3,\n      \"color\": \"65423291a168ad960fcef163\"\n    },\n    {\n      \"_id\": \"65423b30c1846fdd73b2647b\",\n      \"count\": 3,\n      \"color\": \"65423291a168ad960fcef163\"\n    }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/user/cart",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/user/cart",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "empty-cart",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/user/empty-cart",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"empty-cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "applycoupon",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"coupon\": \"EXAMPLE COUPON 50\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/user/cart/applycoupon",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"cart",
+								"applycoupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create cash order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"COD\": true,\n  \"cuoponApplied\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/user/cart/cash-order",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"cart",
+								"cash-order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get orders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/user/get-orders",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"get-orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add address",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"address\": \"my address\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/user/save-address",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"save-address"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"Cash on Delivery\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/user/order/update-order/65424d812f877e1cf982ddb9",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"user",
+								"order",
+								"update-order",
+								"65424d812f877e1cf982ddb9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "create a new product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"phone 15\",\n    \"description\": \"this a new product from apple\",\n    \"price\": 15000,\n    \"category\": \"6542351bdba87a480872a106\",\n    \"brand\": \"65423484dba87a480872a0e6\",\n     \"quantity\": 50,\n     \"color\": [\"65423291a168ad960fcef163\", \"65423288a168ad960fcef15e\"],\n     \"tags\": [\"popular\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/product",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/product/65423bdfc1846fdd73b26489",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"product",
+								"65423bdfc1846fdd73b26489"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/product/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"product",
+								""
+							],
+							"query": [
+								{
+									"key": "price[gte]",
+									"value": "14000",
+									"disabled": true
+								},
+								{
+									"key": "slug",
+									"value": "phone-15",
+									"disabled": true
+								},
+								{
+									"key": "fields",
+									"value": "title,price,category",
+									"disabled": true
+								},
+								{
+									"key": "fields",
+									"value": "-title",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "slug",
+									"disabled": true
+								},
+								{
+									"key": "sort ",
+									"value": "-slug",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "category,-price",
+									"disabled": true
+								},
+								{
+									"key": "price",
+									"value": "1500",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/product/65423bdfc1846fdd73b26489",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"product",
+								"65423bdfc1846fdd73b26489"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"color\": [\n            \"65319b1fd4f0732cdae223e5\"\n        ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/product/65423bdfc1846fdd73b26489",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"product",
+								"65423bdfc1846fdd73b26489"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add wishlist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"prodId\": \"65423bcdc1846fdd73b26482\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/product/wishlist",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"product",
+								"wishlist"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update rating",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"star\": 5,\n  \"prodId\": \"65423bcdc1846fdd73b26482\",\n  \"comment\": \"this is a new comments jpech\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/product/rating",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"product",
+								"rating"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete rating",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/product/rating/65423bcdc1846fdd73b26482",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"product",
+								"rating",
+								"65423bcdc1846fdd73b26482"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "upload phone",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "images",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/product/upload/65423bcdc1846fdd73b26482",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"product",
+								"upload",
+								"65423bcdc1846fdd73b26482"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete images",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"publicImageId\": \"ynoujjh6e4kksgkwk3i0\",\n    \"productId\": \"65423bcdc1846fdd73b26482\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/product/delete-img/",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"product",
+								"delete-img",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "blog",
+			"item": [
+				{
+					"name": "create blog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"phone Reviews\",\n    \"description\": \"I share my thoughts on some of the best phone I've read recently. Don't miss out!\",\n    \"category\": \"653575749de4a17f6c5cd156\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/blog",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"blog"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all blogs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/blog",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"blog"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one blog",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/blog/654240f4a7298d94cc2455f0",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"blog",
+								"654240f4a7298d94cc2455f0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update blog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"shawo\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/blog/654240f4a7298d94cc2455f0",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"blog",
+								"654240f4a7298d94cc2455f0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete blog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/blog/654240f4a7298d94cc2455f0",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"blog",
+								"654240f4a7298d94cc2455f0"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "likes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"blogId\": \"654240d6a7298d94cc2455ea\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/blog/likes",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"blog",
+								"likes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deslikes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"blogId\": \"654240d6a7298d94cc2455ea\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/blog/dislikes",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"blog",
+								"dislikes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update image",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "images",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "images",
+									"type": "file",
+									"src": []
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/blog/upload/654240d6a7298d94cc2455ea",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"blog",
+								"upload",
+								"654240d6a7298d94cc2455ea"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete images",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"publicImageId\": \"n57uibjpa5vhw5owd2m2\",\n    \"blogId\": \"654240d6a7298d94cc2455ea\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/blog/delete-img",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"blog",
+								"delete-img"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "simple",
+			"item": [
+				{
+					"name": "color",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"black\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/color",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"color"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/color",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"color"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get one",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/color/65423278a168ad960fcef159",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"color",
+										"65423278a168ad960fcef159"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/color/65423278a168ad960fcef159",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"color",
+										"65423278a168ad960fcef159"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/color/65423288a168ad960fcef15e",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"color",
+										"65423288a168ad960fcef15e"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "brand",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"apple\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/brand",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"brand"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/brand",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"brand"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get one",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/brand/6542348fdba87a480872a0f0",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"brand",
+										"6542348fdba87a480872a0f0"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/brand/6542348fdba87a480872a0f0",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"brand",
+										"6542348fdba87a480872a0f0"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/brand/6542348fdba87a480872a0f0",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"brand",
+										"6542348fdba87a480872a0f0"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "product cat",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"delete\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/product-category",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"product-category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/product-category",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"product-category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get one",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/product-category/6542352ddba87a480872a115}",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"product-category",
+										"6542352ddba87a480872a115}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/product-category/6542352ddba87a480872a115",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"product-category",
+										"6542352ddba87a480872a115"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/product-category/6542352ddba87a480872a115",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"product-category",
+										"6542352ddba87a480872a115"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "blog cat",
+					"item": [
+						{
+							"name": "create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"DELETE\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{URL}}/blog-category",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"blog-category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/blog-category",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"blog-category"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get one",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/blog-category/65423579dba87a480872a12c",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"blog-category",
+										"65423579dba87a480872a12c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/blog-category/65423579dba87a480872a12c",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"blog-category",
+										"65423579dba87a480872a12c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{URL}}/blog-category/65423579dba87a480872a12c",
+									"host": [
+										"{{URL}}"
+									],
+									"path": [
+										"blog-category",
+										"65423579dba87a480872a12c"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "coupon",
+			"item": [
+				{
+					"name": "create coupon",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Coupon 50\",\n  \"expiry\": \"2023-12-31\",\n  \"discount\": 50\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/coupon",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"coupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/coupon/654248ebb76c385add29741b",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"coupon",
+								"654248ebb76c385add29741b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all coupon",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/coupon",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"coupon"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update coupon",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"discount\": 50\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/coupon/654248ebb76c385add29741b",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"coupon",
+								"654248ebb76c385add29741b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "enquiry",
+			"item": [
+				{
+					"name": "create enquiry",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Smith\",\n  \"email\": \"john.smith@example.com\",\n  \"mobile\": \"9971080808\",\n  \"comment\": \"I have a question about the product XYZ. Can you provide me with more information about it?\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/enquiry",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"enquiry"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all enquiry",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/enquiry",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"enquiry"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get one enquiry",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/enquiry/65424b52c354df51f44f5ba2",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"enquiry",
+								"65424b52c354df51f44f5ba2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete coupon",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/enquiry/65424b52c354df51f44f5ba2",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"enquiry",
+								"65424b52c354df51f44f5ba2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update enquiry",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/enquiry/65424b52c354df51f44f5ba2",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"enquiry",
+								"65424b52c354df51f44f5ba2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
